@@ -25,7 +25,7 @@
         }
         .logo-area { display: flex; align-items: center; cursor: pointer; }
         .logo-main { font-size: 20px; font-weight: 700; color: #002B49; letter-spacing: 1px; }
-        .logo-subtext { font-size: 9px; color: #777; margin-left: 8px; border-left: 1px solid #ccc; padding-left: 8px; text-transform: uppercase; font-weight: bold; }
+        .logo-subtext { font-size: 9px; color: #777; margin-left: 8px; border-left: 1px solid #ccc; padding-left: 8px; text-transform: uppercase; font-weight: bold; line-height: 1.1; }
 
         .nav-buttons { display: flex; gap: 8px; align-items: center; }
         .menu-toggle { background-color: #002B49; color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
@@ -48,12 +48,12 @@
         .page { display: none; }
         .page.active { display: block; }
 
-        /* TITLE BOX (GAYA SCM) */
+        /* TITLE BOX */
         .scm-title-box { text-align: center; margin: 25px 0; }
         .scm-title-box h1 { font-size: 32px; font-weight: 400; color: #7cb342; text-transform: uppercase; letter-spacing: 1px; }
         .scm-title-box .line { width: 60px; height: 2px; background-color: #7cb342; margin: 8px auto 0 auto; }
 
-        /* ================= HOME PAGE STYLES ================= */
+        /* HOME PAGE STYLES */
         .hero-home {
             background: linear-gradient(rgba(0, 43, 73, 0.9), rgba(26, 9, 51, 0.85)), url('https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=600&q=80');
             background-size: cover; background-position: center; padding: 40px 20px; color: white; text-align: center;
@@ -69,17 +69,17 @@
         .card-body h3 { font-size: 16px; color: #002B49; margin-bottom: 5px; }
         .card-body p { font-size: 12px; color: #666; }
 
-        /* ================= TV NETWORK STYLES ================= */
+        /* TV NETWORK STYLES */
         .tv-list-container { padding: 0 20px 40px 20px; display: flex; flex-direction: column; gap: 25px; }
         .tv-card { background: #111; color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .tv-logo-area { background: #fff; padding: 20px; display: flex; justify-content: center; align-items: center; border-bottom: 4px solid #ff9800; }
-        .tv-logo-area img { max-width: 100%; height: 80px; object-fit: contain; }
+        .tv-logo-area img { max-width: 100%; height: 90px; object-fit: contain; }
         .tv-desc-area { padding: 20px; }
         .tv-desc-area h2 { font-size: 18px; margin-bottom: 5px; color: #ff9800; }
         .tv-meta { font-size: 10px; font-weight: bold; background: rgba(255,152,0,0.2); color: #ff9800; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
         .tv-desc-area p { font-size: 13px; line-height: 1.6; text-align: justify; opacity: 0.9; }
 
-        /* ================= PRODUCTION CONTENT STYLES ================= */
+        /* PRODUCTION CONTENT STYLES */
         .scm-banner { width: 100%; height: 180px; background: url('https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=600&q=80') center center; background-size: cover; }
         .orange-container { display: flex; flex-direction: column; }
         .orange-box { background-color: #ff9800; color: white; padding: 25px 20px; border-bottom: 4px solid white; }
@@ -91,7 +91,7 @@
 </head>
 <body>
 
-    <!-- HEADER (DIUBAH SESUAI IMG_20260618_171850.jpg) -->
+    <!-- HEADER -->
     <header>
         <div class="logo-area" onclick="showPage('home')">
             <div class="logo-main">SOVEREIGN</div>
@@ -123,12 +123,12 @@
             <strong>SOVEREIGN Konglomerat Group</strong> mengendalikan ekosistem media massa nasional terintegrasi penuh. Melalui strategi integrasi multi-anak usaha (CAMA Group, ARKA Media Group, Luminary Chronos, dan VAX Media), holding memegang kendali penuh atas 4 stasiun televisi nasional terestrial digital serta seluruh suplai konten eksklusif di dalam satu genggaman platform masa depan.
         </div>
 
-        <h2 class="section-title" style="font-size: 18px; margin-top: 20px; padding: 0 20px;">Lini Bisnis Raksasa</h2>
+        <h2 style="font-size: 18px; margin-top: 20px; padding: 0 20px;">Lini Bisnis Raksasa</h2>
         <div class="grid-container">
             <div class="grid-card" onclick="showPage('penyiaran')">
                 <div class="card-body">
                     <h3>4 Jaringan Penyiaran TV</h3>
-                    <p>VANDITAMA TV, ZETACREAT TV, NEXA TV, & VIBE TV.</p>
+                    <p>ZETACREAT TV, VANDITAMA TV, NEXA TV, & VIBE TV.</p>
                 </div>
             </div>
             <div class="grid-card" onclick="showPage('konten')">
@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    <!-- ==================== HALAMAN 2: PENYIARAN ==================== -->
+    <!-- ==================== HALAMAN 2: PENYIARAN (LOGO FIX SINKRON) ==================== -->
     <div id="penyiaranPage" class="page">
         <div class="breadcrumb">🏠 &gt; JARINGAN &gt; <span>PENYIARAN DIGITAL</span></div>
         
@@ -153,7 +153,7 @@
             <!-- 1. ZETACREAT TV -->
             <div class="tv-card">
                 <div class="tv-logo-area">
-                    <img src="IMG_20260521_225138.png" alt="ZETACREAT TV" onerror="this.src='IMG_20260605_225138.png'">
+                    <img src="IMG_20260605_225138.png" alt="ZETACREAT TV">
                 </div>
                 <div class="tv-desc-area">
                     <div class="tv-meta">Dikelola: ARKA Media Group</div>
@@ -177,7 +177,7 @@
             <!-- 3. NEXA TV -->
             <div class="tv-card">
                 <div class="tv-logo-area">
-                    <img src="20260118_111335.jpg" alt="NEXA TV" onerror="this.src='20260618_111335.jpg'">
+                    <img src="20260618_111335.jpg" alt="NEXA TV">
                 </div>
                 <div class="tv-desc-area">
                     <div class="tv-meta">Dikelola: Luminary Chronos Media News Gayanika</div>
@@ -189,7 +189,7 @@
             <!-- 4. VIBE TV -->
             <div class="tv-card">
                 <div class="tv-logo-area">
-                    <img src="20260118_112829.jpg" alt="VIBE TV" onerror="this.src='20260618_112829.jpg'">
+                    <img src="20260618_112829.jpg" alt="VIBE TV">
                 </div>
                 <div class="tv-desc-area">
                     <div class="tv-meta">Dikelola: VAX Media</div>
