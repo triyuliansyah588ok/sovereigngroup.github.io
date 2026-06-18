@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOVEREIGN Group | Media Terintegrasi</title>
+    <title>SOVEREIGN KONGLOMERAT GROUP</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* RESET & BASE MOBILE STYLES */
@@ -25,7 +25,7 @@
         }
         .logo-area { display: flex; align-items: center; cursor: pointer; }
         .logo-main { font-size: 20px; font-weight: 700; color: #002B49; letter-spacing: 1px; }
-        .logo-subtext { font-size: 9px; color: #777; margin-left: 8px; border-left: 1px solid #ccc; padding-left: 8px; text-transform: uppercase; }
+        .logo-subtext { font-size: 9px; color: #777; margin-left: 8px; border-left: 1px solid #ccc; padding-left: 8px; text-transform: uppercase; font-weight: bold; }
 
         .nav-buttons { display: flex; gap: 8px; align-items: center; }
         .menu-toggle { background-color: #002B49; color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
@@ -91,11 +91,11 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER (DIUBAH SESUAI IMG_20260618_171850.jpg) -->
     <header>
         <div class="logo-area" onclick="showPage('home')">
             <div class="logo-main">SOVEREIGN</div>
-            <div class="logo-subtext">MEDIA<br>GROUP</div>
+            <div class="logo-subtext">KONGLOMERAT<br>GROUP</div>
         </div>
         <div class="nav-buttons">
             <button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
@@ -115,15 +115,15 @@
     <!-- ==================== HALAMAN 1: HOME ==================== -->
     <div id="homePage" class="page active">
         <section class="hero-home">
-            <h2>SOVEREIGN MEDIA GROUP</h2>
+            <h2>SOVEREIGN KONGLOMERAT GROUP</h2>
             <p>The Ultimate Powerhouse of Indonesian Digital Broadcasting & Entertainment Ecosystem.</p>
         </section>
 
         <div class="holding-intro">
-            <strong>SOVEREIGN Group</strong> mengendalikan ekosistem media massa nasional terintegrasi penuh. Melalui strategi integrasi multi-anak usaha (CAMA Group, ARKA Media Group, Luminary Chronos, dan VAX Media), holding memegang kendali penuh atas 4 stasiun televisi nasional terestrial digital serta seluruh suplai konten eksklusif di dalam satu genggaman platform masa depan.
+            <strong>SOVEREIGN Konglomerat Group</strong> mengendalikan ekosistem media massa nasional terintegrasi penuh. Melalui strategi integrasi multi-anak usaha (CAMA Group, ARKA Media Group, Luminary Chronos, dan VAX Media), holding memegang kendali penuh atas 4 stasiun televisi nasional terestrial digital serta seluruh suplai konten eksklusif di dalam satu genggaman platform masa depan.
         </div>
 
-        <h2 class="section-title" style="font-size: 18px; margin-top: 20px;">Lini Bisnis Raksasa</h2>
+        <h2 class="section-title" style="font-size: 18px; margin-top: 20px; padding: 0 20px;">Lini Bisnis Raksasa</h2>
         <div class="grid-container">
             <div class="grid-card" onclick="showPage('penyiaran')">
                 <div class="card-body">
@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    <!-- ==================== HALAMAN 2: PENYIARAN (4 STASIUN TV PREMIUM) ==================== -->
+    <!-- ==================== HALAMAN 2: PENYIARAN ==================== -->
     <div id="penyiaranPage" class="page">
         <div class="breadcrumb">🏠 &gt; JARINGAN &gt; <span>PENYIARAN DIGITAL</span></div>
         
@@ -200,7 +200,7 @@
         </div>
     </div>
 
-    <!-- ==================== HALAMAN 3: KONTEN (GAYA SCM) ==================== -->
+    <!-- ==================== HALAMAN 3: KONTEN ==================== -->
     <div id="kontenPage" class="page">
         <div class="breadcrumb">🏠 &gt; USAHA &gt; <span>KONTEN KREATIF</span></div>
         <div class="scm-title-box">
@@ -220,18 +220,17 @@
             </div>
             <div class="orange-box">
                 <h2>PT CREW ENTERTAINMENT INDONESIA (CREW ENTERTAINMENT)</h2>
-                <p>Agensi ekosistem manajemen SDM industri kreatif, inkubator bakat talenta seni akting, serta manajemen kru produksi profesional internal untuk efisiensi jaringan SOVEREIGN Group.</p>
+                <p>Agensi ekosistem manajemen SDM industri kreatif, inkubator bakat talenta seni akting, serta manajemen kru produksi profesional internal untuk efisiensi jaringan SOVEREIGN Konglomerat Group.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        Hak Cipta Dilindungi &copy; 2026 SOVEREIGN Media Group Holding. All Rights Reserved.
+        Hak Cipta Dilindungi &copy; 2026 SOVEREIGN Konglomerat Group Holding. All Rights Reserved.
     </footer>
 
     <script>
         function toggleMenu() { document.getElementById('navOverlay').classList.toggle('active'); }
-        function closeMenu() { document.getElementById('navOverlay').classList.remove('remove'); }
         function showPage(pageId) {
             var pages = document.getElementsByClassName('page');
             for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); }
