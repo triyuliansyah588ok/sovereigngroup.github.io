@@ -1,48 +1,138 @@
-<!-- Masukkan bagian ini di dalam tag <main> pada website SOVEREIGN ASIA Group -->
-<section id="broadcasting-network" style="background-color: #1f2833; padding: 40px 20px; border-radius: 10px; margin: 40px auto; max-width: 1100px; border-left: 5px solid #45f3ff;">
-    <h2 style="color: #ffffff; font-size: 26px; border-bottom: 2px solid #45f3ff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">Our Broadcasting Network</h2>
-    <p style="color: #c5c6c7; margin-bottom: 25px; line-height: 1.6;">Di bawah naungan SOVEREIGN ASIA GROUP dan diproduksi secara kreatif oleh PT ARKANANTA MEDIA SINEMA, berikut adalah jaringan stasiun televisi swasta nasional generasi terbaru kami:</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-        <!-- VAMASGY TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">VAMASGY TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Informasi Penuh & Sinema Digital</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOVEREIGN ASIA GROUP - Media & Broadcasting</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0b0c10; color: #c5c6c7; }
+        header { background: linear-gradient(90deg, #1f2833, #0b0c10); padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #45f3ff; position: sticky; top: 0; z-index: 100; }
+        .logo-text { font-size: 24px; font-weight: bold; color: #45f3ff; letter-spacing: 2px; text-shadow: 0 0 10px rgba(69, 243, 255, 0.5); }
+        
+        .menu-dots { font-size: 28px; color: #45f3ff; cursor: pointer; font-weight: bold; }
+        nav { display: none; position: absolute; top: 80px; right: 20px; background-color: #1f2833; border: 2px solid #45f3ff; border-radius: 8px; flex-direction: column; padding: 15px; width: 180px; box-shadow: 0 5px 25px rgba(0,0,0,0.8); }
+        nav.active { display: flex; }
+        nav a { color: #ffffff; text-decoration: none; margin: 10px 0; font-size: 16px; border-bottom: 1px solid #0b0c10; padding-bottom: 5px; }
+        
+        .hero { background: radial-gradient(circle, rgba(31,40,51,1) 0%, rgba(11,12,16,1) 100%); padding: 60px 20px; text-align: center; border-bottom: 1px solid #1f2833; }
+        .hero h1 { font-size: 32px; color: #ffffff; margin-bottom: 15px; }
+        .hero p { font-size: 16px; color: #66fcf1; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; }
+        .live-badge { background-color: #ff0055; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; animation: blink 1.5s infinite; }
+        
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        section { background-color: #1f2833; padding: 30px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid #66fcf1; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        section h2 { color: #ffffff; margin-bottom: 20px; font-size: 24px; border-bottom: 1px solid #45f3ff; padding-bottom: 10px; text-transform: uppercase; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .card { background-color: #0b0c10; padding: 20px; border-radius: 8px; border: 1px solid #45f3ff; text-align: center; }
+        .card h3 { color: #ffffff; font-size: 18px; margin-bottom: 10px; }
+        .card p { color: #66fcf1; font-size: 13px; }
+        
+        footer { background-color: #0b0c10; text-align: center; padding: 40px 20px; border-top: 2px solid #1f2833; font-size: 14px; }
+        .copyright { color: #45f3ff; margin-top: 15px; font-size: 12px; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">SOVEREIGN ASIA</div>
+        <div class="menu-dots" onclick="bukaMenu()">⋮</div>
+        <nav id="menu-navigasi">
+            <a href="#beranda" onclick="bukaMenu()">Beranda</a>
+            <a href="#broadcasting-network" onclick="bukaMenu()">Jaringan TV</a>
+            <a href="#tentang-kami" onclick="bukaMenu()">Tentang Kami</a>
+            <a href="#bantuan" onclick="bukaMenu()">Bantuan</a>
+        </nav>
+    </header>
+
+    <main id="beranda">
+        <!-- HALAMAN UTAMA KEMBALI DI SINI -->
+        <div class="hero">
+            <div class="live-badge">LIVE STREAMING</div>
+            <h1 style="margin-top: 15px;">Masa Depan Penyiaran Indonesia Telah Tiba</h1>
+            <p>Platform pusat kendali media digital terintegrasi skala nasional, menyajikan akses cepat ke seluruh lini penyiaran terbaik kami.</p>
+            <div style="background: #000; padding: 40px; border-radius: 10px; max-width: 700px; margin: 0 auto; color: #45f3ff; border: 1px dashed #45f3ff;">
+                [ Ruang Pemutar Video Siaran Utama Terintegrasi ]
+            </div>
         </div>
-        <!-- FRABRAYA TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">FRABRAYA TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Hiburan & Drama Nasional</p>
+
+        <div class="container">
+            
+            <!-- SEKSI JARINGAN PENYIARAN: SEKARANG MENJADI 5 STASIUN TELEVISI -->
+            <section id="broadcasting-network">
+                <h2>Our Broadcasting Network</h2>
+                <p style="margin-bottom: 25px; line-height: 1.6;">Di bawah naungan SOVEREIGN ASIA GROUP dan diproduksi secara kreatif oleh PT ARKANANTA MEDIA SINEMA, berikut adalah 5 jaringan stasiun televisi swasta nasional generasi terbaru kami:</p>
+                
+                <div class="grid">
+                    <!-- 1. VAMASGY TV (Merujuk file 20260621_184835.jpg) -->
+                    <div class="card">
+                        <h3>VAMASGY TV</h3>
+                        <p>Stasiun TV Informasi Penuh & Sinema Digital</p>
+                    </div>
+                    <!-- 2. FRABRAYA TV (Merujuk file 20260619_224101.jpg) -->
+                    <div class="card">
+                        <h3>FRABRAYA TV</h3>
+                        <p>Stasiun TV Hiburan & Drama Nasional</p>
+                    </div>
+                    <!-- 3. ZETACREAT TV (Merujuk file 20260618_112829.jpg) -->
+                    <div class="card">
+                        <h3>ZETACREAT TV</h3>
+                        <p>Stasiun TV Kreatif & Generasi Muda</p>
+                    </div>
+                    <!-- 4. VANDITAMA TV (Merujuk file 20260618_111335.jpg) -->
+                    <div class="card">
+                        <h3>VANDITAMA TV</h3>
+                        <p>Stasiun TV Berita & Informasi Interaktif</p>
+                    </div>
+                    <!-- 5. NEXAT TV (Merujuk file 20260607_223237-removebg-preview.png) -->
+                    <div class="card">
+                        <h3>NEXAT TV</h3>
+                        <p>Stasiun TV Musik & Gaya Hidup Modern</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TENTANG KAMI LENGKAP -->
+            <section id="tentang-kami">
+                <h2>Tentang Kami</h2>
+                <p style="line-height: 1.8; margin-bottom: 15px;">
+                    Diresmikan pada <strong>Senin, 22 Juni 2026</strong>, <strong>SOVEREIGN ASIA GROUP</strong> merupakan ekosistem konglomerat media nasional baru yang bergerak di bidang infrastruktur penyiaran digital bergerak. Membawahi unit produksi utama <strong>PT ARKANANTA MEDIA SINEMA</strong>, kami berkomitmen menyatukan beragam informasi melalui inovasi multi-channel televisi streaming terdepan di Indonesia.
+                </p>
+            </section>
+
+            <!-- BANTUAN LENGKAP -->
+            <section id="bantuan">
+                <h2>Pusat Bantuan</h2>
+                <div class="grid">
+                    <div class="card" style="text-align: left;">
+                        <h4 style="color: #66fcf1; margin-bottom: 5px;">Akses Layanan</h4>
+                        <p style="color: #c5c6c7;">Seluruh saluran TV dapat diakses 24 jam gratis menggunakan browser HP Vivo Anda tanpa registrasi berbayar.</p>
+                    </div>
+                    <div class="card" style="text-align: left;">
+                        <h4 style="color: #66fcf1; margin-bottom: 5px;">Konten Pendek</h4>
+                        <p style="color: #c5c6c7;">Gunakan fitur menu masing-masing stasiun TV untuk berpindah ke kanal video pendek informatif.</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
-        <!-- ZETACREAT TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">ZETACREAT TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Kreatif & Generasi Muda</p>
-        </div>
-        <!-- VANDITAMA TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">VANDITAMA TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Berita & Informasi Interaktif</p>
-        </div>
-        <!-- NEXAT TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">NEXAT TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Musik & Gaya Hidup Modern</p>
-        </div>
-        <!-- VBS TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">VBS TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Pendidikan & Kebudayaan</p>
-        </div>
-        <!-- VAMDX CHANNELS -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">VAMDX CHANNELS</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Jaringan Saluran Hiburan Premium</p>
-        </div>
-        <!-- VAND TV -->
-        <div style="background-color: #0b0c10; border: 1px solid #45f3ff; padding: 20px; border-radius: 8px; text-align: center;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 10px;">VAND TV</h3>
-            <p style="color: #66fcf1; font-size: 14px;">Stasiun TV Komunitas & Penyiaran Daerah</p>
-        </div>
-    </div>
-</section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">SOVEREIGN ASIA GROUP</div>
+        <p>Holding Corporate Media & Broadcasting Network Indonesia</p>
+        <p class="copyright">
+            Copyright © 2026 VAMASGY TV / PT ARKANANTA MEDIA SINEMA. Seluruh Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+    <script>
+        function bukaMenu() {
+            var x = document.getElementById("menu-navigasi");
+            if (x.className === "") { x.className += "active"; } else { x.className = ""; }
+        }
+    </script>
+</body>
+</html>
