@@ -3,135 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOVEREIGN ASIA GROUP - Media & Broadcasting</title>
+    <title>SOVEREIGN ASIA GROUP - Leading Conglomerate & Media Infrastructure</title>
     <style>
+        /* Desain Premium & Efek Animasi 3D Latar Belakang */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0b0c10; color: #c5c6c7; }
-        header { background: linear-gradient(90deg, #1f2833, #0b0c10); padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #45f3ff; position: sticky; top: 0; z-index: 100; }
-        .logo-text { font-size: 24px; font-weight: bold; color: #45f3ff; letter-spacing: 2px; text-shadow: 0 0 10px rgba(69, 243, 255, 0.5); }
         
-        .menu-dots { font-size: 28px; color: #45f3ff; cursor: pointer; font-weight: bold; }
+        body { 
+            background-color: #0b0c10; 
+            color: #c5c6c7; 
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 3. ANIMASI 3D LATAR BELAKANG (CSS Canvas Emulation) */
+        .bg-animation-3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1f2833 0%, #0b0c10 100%);
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(69, 243, 255, 0.3);
+            border-radius: 50%;
+            animation: fly3d 12s infinite linear;
+            box-shadow: 0 0 12px rgba(69, 243, 255, 0.6);
+        }
+        /* Membuat variasi ukuran dan kedalaman grid 3D */
+        .p1 { width: 4px; height: 4px; left: 20%; top: 30%; animation-delay: 0s; }
+        .p2 { width: 6px; height: 6px; left: 70%; top: 20%; animation-delay: 3s; }
+        .p3 { width: 3px; height: 3px; left: 40%; top: 80%; animation-delay: 6s; }
+        .p4 { width: 7px; height: 7px; left: 85%; top: 65%; animation-delay: 1s; }
+        .p5 { width: 5px; height: 5px; left: 10%; top: 75%; animation-delay: 4s; }
+
+        @keyframes fly3d {
+            0% { transform: scale(0.2) translate3d(0, 0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(2.5) translate3d(50px, -50px, 100px); opacity: 0; }
+        }
+
+        /* Struktur Konten Terintegrasi */
+        header { background: rgba(31, 40, 51, 0.85); backdrop-filter: blur(10px); padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #45f3ff; position: sticky; top: 0; z-index: 100; }
+        .logo-text { font-size: 24px; font-weight: bold; color: #45f3ff; letter-spacing: 2px; text-shadow: 0 0 15px rgba(69, 243, 255, 0.7); }
+        
+        .menu-dots { font-size: 28px; color: #45f3ff; cursor: pointer; font-weight: bold; user-select: none; }
         nav { display: none; position: absolute; top: 80px; right: 20px; background-color: #1f2833; border: 2px solid #45f3ff; border-radius: 8px; flex-direction: column; padding: 15px; width: 180px; box-shadow: 0 5px 25px rgba(0,0,0,0.8); }
         nav.active { display: flex; }
         nav a { color: #ffffff; text-decoration: none; margin: 10px 0; font-size: 16px; border-bottom: 1px solid #0b0c10; padding-bottom: 5px; }
         
-        .hero { background: radial-gradient(circle, rgba(31,40,51,1) 0%, rgba(11,12,16,1) 100%); padding: 60px 20px; text-align: center; border-bottom: 1px solid #1f2833; }
-        .hero h1 { font-size: 32px; color: #ffffff; margin-bottom: 15px; }
+        .hero { padding: 80px 20px; text-align: center; background: rgba(11, 12, 16, 0.6); margin-bottom: 20px; }
+        .hero h1 { font-size: 34px; color: #ffffff; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
         .hero p { font-size: 16px; color: #66fcf1; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; }
-        .live-badge { background-color: #ff0055; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; animation: blink 1.5s infinite; }
+        .corporate-badge { background-color: #45f3ff; color: #0b0c10; padding: 6px 20px; border-radius: 4px; font-weight: bold; display: inline-block; font-size: 12px; letter-spacing: 2px; margin-bottom: 15px; }
         
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        section { background-color: #1f2833; padding: 30px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid #66fcf1; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        section h2 { color: #ffffff; margin-bottom: 20px; font-size: 24px; border-bottom: 1px solid #45f3ff; padding-bottom: 10px; text-transform: uppercase; }
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 20px; position: relative; z-index: 5; }
+        section { background-color: rgba(31, 40, 51, 0.9); padding: 35px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid #45f3ff; backdrop-filter: blur(5px); box-shadow: 0 8px 25px rgba(0,0,0,0.6); }
+        section h2 { color: #ffffff; margin-bottom: 25px; font-size: 24px; border-bottom: 1px solid #45f3ff; padding-bottom: 10px; text-transform: uppercase; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .card { background-color: #0b0c10; padding: 20px; border-radius: 8px; border: 1px solid #45f3ff; text-align: center; }
-        .card h3 { color: #ffffff; font-size: 18px; margin-bottom: 10px; }
-        .card p { color: #66fcf1; font-size: 13px; }
+        /* 1. GRID BISNIS UTAMA */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background-color: rgba(11, 12, 16, 0.9); padding: 25px; border-radius: 8px; border: 1px solid #1f2833; transition: 0.3s; }
+        .card:hover { border-color: #45f3ff; transform: scale(1.02); }
+        .card h3 { color: #45f3ff; font-size: 20px; margin-bottom: 12px; }
+        .card p { color: #c5c6c7; font-size: 14px; line-height: 1.6; }
         
-        footer { background-color: #0b0c10; text-align: center; padding: 40px 20px; border-top: 2px solid #1f2833; font-size: 14px; }
+        /* 2. DAFTAR USAHA BARU */
+        .business-list { list-style: none; margin-top: 15px; }
+        .business-list li { background-color: rgba(11, 12, 16, 0.9); padding: 18px; border-radius: 6px; margin-bottom: 12px; border-left: 4px solid #ff0055; color: #ffffff; }
+        .business-list strong { color: #ff0055; font-size: 18px; display: block; margin-bottom: 5px; }
+        .business-list span { display: block; color: #66fcf1; font-size: 14px; line-height: 1.5; margin-top: 5px; }
+        
+        footer { background-color: #0b0c10; text-align: center; padding: 40px 20px; border-top: 2px solid #1f2833; font-size: 14px; position: relative; z-index: 10; }
         .copyright { color: #45f3ff; margin-top: 15px; font-size: 12px; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
+    <!-- Komponen Latar Belakang Animasi 3D Bergerak -->
+    <div class="bg-animation-3d">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+    </div>
+
+    <!-- Navigasi Atas -->
     <header>
         <div class="logo-text">SOVEREIGN ASIA</div>
         <div class="menu-dots" onclick="bukaMenu()">⋮</div>
         <nav id="menu-navigasi">
             <a href="#beranda" onclick="bukaMenu()">Beranda</a>
-            <a href="#broadcasting-network" onclick="bukaMenu()">Jaringan TV</a>
-            <a href="#tentang-kami" onclick="bukaMenu()">Tentang Kami</a>
-            <a href="#bantuan" onclick="bukaMenu()">Bantuan</a>
+            <a href="#portfolio-bisnis" onclick="bukaMenu()">Sektor Bisnis</a>
+            <a href="#usaha-baru" onclick="bukaMenu()">Usaha Baru</a>
+            <a href="#tentang-holding" onclick="bukaMenu()">Tentang Kami</a>
         </nav>
     </header>
 
     <main id="beranda">
-        <!-- HALAMAN UTAMA KEMBALI DI SINI -->
         <div class="hero">
-            <div class="live-badge">LIVE STREAMING</div>
-            <h1 style="margin-top: 15px;">Masa Depan Penyiaran Indonesia Telah Tiba</h1>
-            <p>Platform pusat kendali media digital terintegrasi skala nasional, menyajikan akses cepat ke seluruh lini penyiaran terbaik kami.</p>
-            <div style="background: #000; padding: 40px; border-radius: 10px; max-width: 700px; margin: 0 auto; color: #45f3ff; border: 1px dashed #45f3ff;">
-                [ Ruang Pemutar Video Siaran Utama Terintegrasi ]
+            <div class="corporate-badge">GLOBAL HOLDING KONGROMERAT</div>
+            <h1>Membangun Ekosistem Industri Masa Depan</h1>
+            <p>SOVEREIGN ASIA GROUP memimpin transformasi digital nasional melalui integrasi infrastruktur penyiaran canggih dan tata kelola korporasi yang visioner.</p>
+            <div style="background: #000; padding: 40px; border-radius: 10px; max-width: 750px; margin: 0 auto; color: #45f3ff; border: 1px dashed #45f3ff; box-shadow: 0 0 20px rgba(69,243,255,0.2);">
+                [ Ruang Dokumentasi / Video Company Profile Terintegrasi ]
             </div>
         </div>
 
         <div class="container">
             
-            <!-- SEKSI JARINGAN PENYIARAN: SEKARANG MENJADI 5 STASIUN TELEVISI -->
-            <section id="broadcasting-network">
-                <h2>Our Broadcasting Network</h2>
-                <p style="margin-bottom: 25px; line-height: 1.6;">Di bawah naungan SOVEREIGN ASIA GROUP dan diproduksi secara kreatif oleh PT ARKANANTA MEDIA SINEMA, berikut adalah 5 jaringan stasiun televisi swasta nasional generasi terbaru kami:</p>
-                
+            <!-- 1. BISNIS UTAMA (LENGKAP) -->
+            <section id="portfolio-bisnis">
+                <h2>Sektor Bisnis Utama (Core Businesses)</h2>
                 <div class="grid">
-                    <!-- 1. VAMASGY TV (Merujuk file 20260621_184835.jpg) -->
                     <div class="card">
-                        <h3>VAMASGY TV</h3>
-                        <p>Stasiun TV Informasi Penuh & Sinema Digital</p>
+                        <h3>1. Media & Jaringan Penyiaran</h3>
+                        <p>Mengelola ekosistem stasiun televisi swasta nasional berbasis penyiaran digital bergerak terpadu, mendistribusikan informasi dan edukasi 24 jam gratis ke seluruh pelosok tanah air.</p>
                     </div>
-                    <!-- 2. FRABRAYA TV (Merujuk file 20260619_224101.jpg) -->
                     <div class="card">
-                        <h3>FRABRAYA TV</h3>
-                        <p>Stasiun TV Hiburan & Drama Nasional</p>
+                        <h3>2. Rumah Produksi Sinema Kreatif</h3>
+                        <p>Melalui unit kreasi sinematografi, memproduksi program hiburan drama, FTV komersial, serial pendek interaktif, dan konten digital berkualitas tinggi berskala nasional.</p>
                     </div>
-                    <!-- 3. ZETACREAT TV (Merujuk file 20260618_112829.jpg) -->
                     <div class="card">
-                        <h3>ZETACREAT TV</h3>
-                        <p>Stasiun TV Kreatif & Generasi Muda</p>
-                    </div>
-                    <!-- 4. VANDITAMA TV (Merujuk file 20260618_111335.jpg) -->
-                    <div class="card">
-                        <h3>VANDITAMA TV</h3>
-                        <p>Stasiun TV Berita & Informasi Interaktif</p>
-                    </div>
-                    <!-- 5. NEXAT TV (Merujuk file 20260607_223237-removebg-preview.png) -->
-                    <div class="card">
-                        <h3>NEXAT TV</h3>
-                        <p>Stasiun TV Musik & Gaya Hidup Modern</p>
+                        <h3>3. Infrastruktur Teknologi Komputasi</h3>
+                        <p>Pengembangan arsitektur web repositori multi-platform, integrasi sistem server streaming awan, pengembangan aplikasi cerdas, serta manajemen hak cipta digital.</p>
                     </div>
                 </div>
+            </section>
+
+            <!-- 2. USAHA BARU (LENGKAP DAN MENDETAIL) -->
+            <section id="usaha-baru" style="border-left-color: #ff0055;">
+                <h2>Ekspansi Usaha Baru (New Ventures)</h2>
+                <p style="margin-bottom: 25px; line-height: 1.6;">Diluncurkan secara resmi pada <strong>Senin, 22 Juni 2026</strong>, SOVEREIGN ASIA GROUP melalui unit produksi **PT ARKANANTA MEDIA SINEMA** melakukan penetrasi pasar dengan menghadirkan 5 lini usaha stasiun televisi swasta nasional baru:</p>
+                
+                <ul class="business-list">
+                    <li>
+                        <strong>VAMASGY TV</strong>
+                        <span>Sektor usaha baru media penyiaran yang fokus menyajikan tayangan informasi penuh, jurnalisme investigatif, berita nasional terintegrasi, dan program sinema digital premium.</span>
+                    </li>
+                    <li>
+                        <strong>FRABRAYA TV</strong>
+                        <span>Fokus bisnis pada penyiaran hiburan keluarga komersial, produksi serial drama sinetron nasional, pertunjukan seni, serta konten edukasi budaya lokal Indonesia.</span>
+                    </li>
+                    <li>
+                        <strong>ZETACREAT TV</strong>
+                        <span>Lini usaha kreatif penyiaran yang dikhususkan bagi generasi muda, menayangkan program talkshow teknologi, e-sports, inovasi startup, dan video pendek interaktif.</span>
+                    </li>
+                    <li>
+                        <strong>VANDITAMA TV</strong>
+                        <span>Jaringan usaha TV berita (news channel) bergerak 24 jam yang tersinkronisasi penuh dengan ekosistem portal web informasi nasional tercepat dan tervalid.</span>
+                    </li>
+                    <li>
+                        <strong>NEXAT TV</strong>
+                        <span>Sektor usaha penyiaran musik modern, ulasan gaya hidup urban, tren global, serta panggung kreativitas bagi komunitas musisi dan kreator independen Indonesia.</span>
+                    </li>
+                </ul>
             </section>
 
             <!-- TENTANG KAMI LENGKAP -->
-            <section id="tentang-kami">
-                <h2>Tentang Kami</h2>
-                <p style="line-height: 1.8; margin-bottom: 15px;">
-                    Diresmikan pada <strong>Senin, 22 Juni 2026</strong>, <strong>SOVEREIGN ASIA GROUP</strong> merupakan ekosistem konglomerat media nasional baru yang bergerak di bidang infrastruktur penyiaran digital bergerak. Membawahi unit produksi utama <strong>PT ARKANANTA MEDIA SINEMA</strong>, kami berkomitmen menyatukan beragam informasi melalui inovasi multi-channel televisi streaming terdepan di Indonesia.
+            <section id="tentang-holding">
+                <h2>Tentang Sovereign Asia Group</h2>
+                <p style="line-height: 1.8;">
+                    <strong>SOVEREIGN ASIA GROUP</strong> adalah simbol konglomerasi bisnis masa depan yang mengintegrasikan teknologi dan media massa. Di bawah kepemimpinan yang adaptif, kami bergerak mengamankan legalitas hukum negara, membangun infrastruktur penyiaran digital yang kokoh, serta membuka jalan bagi pertumbuhan ekonomi kreatif nasional yang mandiri.
                 </p>
-            </section>
-
-            <!-- BANTUAN LENGKAP -->
-            <section id="bantuan">
-                <h2>Pusat Bantuan</h2>
-                <div class="grid">
-                    <div class="card" style="text-align: left;">
-                        <h4 style="color: #66fcf1; margin-bottom: 5px;">Akses Layanan</h4>
-                        <p style="color: #c5c6c7;">Seluruh saluran TV dapat diakses 24 jam gratis menggunakan browser HP Vivo Anda tanpa registrasi berbayar.</p>
-                    </div>
-                    <div class="card" style="text-align: left;">
-                        <h4 style="color: #66fcf1; margin-bottom: 5px;">Konten Pendek</h4>
-                        <p style="color: #c5c6c7;">Gunakan fitur menu masing-masing stasiun TV untuk berpindah ke kanal video pendek informatif.</p>
-                    </div>
-                </div>
             </section>
 
         </div>
     </main>
 
     <footer>
-        <div class="footer-logo">SOVEREIGN ASIA GROUP</div>
-        <p>Holding Corporate Media & Broadcasting Network Indonesia</p>
+        <div style="font-weight: bold; color: #ffffff; font-size: 18px; margin-bottom: 10px;">SOVEREIGN ASIA GROUP</div>
+        <p style="font-size: 13px; color: #a5a6a7;">Holding Corporate Media & Broadcasting Network Indonesia</p>
         <p class="copyright">
-            Copyright © 2026 VAMASGY TV / PT ARKANANTA MEDIA SINEMA. Seluruh Hak Cipta Dilindungi Undang-Undang.
+            Copyright © 2026 SOVEREIGN ASIA GROUP / PT ARKANANTA MEDIA SINEMA. Seluruh Hak Cipta Dilindungi Undang-Undang.
         </p>
     </footer>
 
+    <!-- Sistem Navigasi Menu HP Vivo -->
     <script>
         function bukaMenu() {
             var x = document.getElementById("menu-navigasi");
-            if (x.className === "") { x.className += "active"; } else { x.className = ""; }
+            if (x.className === "") {
+                x.className += "active";
+            } else {
+                x.className = "";
+            }
         }
     </script>
 </body>
